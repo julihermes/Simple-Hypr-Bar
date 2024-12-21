@@ -35,7 +35,7 @@ function AppButton({ app }: { app: Apps.Application }) {
   );
 }
 
-export default function Applauncher() {
+export default function AppLauncher() {
   const { CENTER } = Gtk.Align;
   const apps = new Apps.Apps();
 
