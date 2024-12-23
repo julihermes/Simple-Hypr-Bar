@@ -1,8 +1,11 @@
 import { App, Astal, Gdk, Gtk } from "astal/gtk3";
-import ToogleAppLauncher from "../Applauncher/ToogleAppLauncher";
+import ToogleAppLauncher from "../AppLauncher/Toogle";
 import Workspaces from "./Workspaces";
 import FocusedClient from "./FocusedClient";
+import Wifi from "./Wifi";
 import Time from "./Time";
+import Audio from "./Audio";
+import Battery from "./Battery";
 
 export default function Bar(gdkmonitor: Gdk.Monitor) {
   const { TOP, LEFT, RIGHT } = Astal.WindowAnchor;
@@ -24,6 +27,9 @@ export default function Bar(gdkmonitor: Gdk.Monitor) {
           <FocusedClient />
         </box>
         <box halign={Gtk.Align.END}>
+          <Wifi />
+          <Audio />
+          <Battery />
           <Time />
         </box>
       </centerbox>
