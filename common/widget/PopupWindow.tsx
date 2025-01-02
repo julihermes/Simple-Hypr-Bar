@@ -1,5 +1,6 @@
 import { App, Astal, Gdk, Gtk } from "astal/gtk3";
 import { WindowProps } from "astal/gtk3/widget";
+import { toggleWindow } from "../lib/utils";
 
 export interface PopupWindowProps extends WindowProps {
   name: string;
@@ -27,11 +28,11 @@ export default function PopupWindow({
       layer={Astal.Layer.OVERLAY}
       keymode={Astal.Keymode.ON_DEMAND}
       {...props}
-      onKeyPressEvent={(self, event: Gdk.Event) => {
-        if (event.get_keyval()[1] === Gdk.KEY_Escape)
-          App.toggle_window(self.name);
+      onKeyPressEvent={(self, e: Gdk.Event) => {
+        if (e.get_keyval()[1] === Gdk.KEY_Escape)
+          toggleWindow(self.name, application);
       }}
-      onButtonPressEvent={(self, e) => App.toggle_window(self.name)}
+      onButtonPressEvent={(self) => toggleWindow(self.name, application)}
     >
       <eventbox
         onButtonPressEvent={(_, e) => true}
