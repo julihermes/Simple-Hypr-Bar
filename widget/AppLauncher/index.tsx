@@ -1,5 +1,5 @@
 import Apps from "gi://AstalApps";
-import { App, Astal, Gdk, Gtk } from "astal/gtk3";
+import { Gtk } from "astal/gtk3";
 import { Variable } from "astal";
 import PopupWindow from "../../common/widget/PopupWindow";
 import { toggleWindow } from "../../common/lib/utils";

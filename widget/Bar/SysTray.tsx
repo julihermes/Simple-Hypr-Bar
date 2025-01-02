@@ -1,7 +1,5 @@
 import { bind } from "astal";
 import Tray from "gi://AstalTray";
-import { astalify } from "../../../../../../usr/share/astal/gjs/gtk3";
-import Gtk from "gi://Gtk";
 
 export default function SysTray() {
   const tray = Tray.get_default();

@@ -1,5 +1,5 @@
 import { App, Astal, Gdk, Gtk } from "astal/gtk3";
-import ToogleAppLauncher from "../AppLauncher/Toogle";
+import ToggleAppLauncher from "../AppLauncher/Toggle";
 import Workspaces from "./Workspaces";
 import FocusedClient from "./FocusedClient";
 import Wifi from "./Wifi";
@@ -21,7 +21,7 @@ export default function Bar(gdkmonitor: Gdk.Monitor) {
     >
       <centerbox>
         <box halign={Gtk.Align.START}>
-          <ToogleAppLauncher />
+          <ToggleAppLauncher />
           <Workspaces />
         </box>
         <box>

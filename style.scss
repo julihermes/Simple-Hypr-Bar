@@ -1,23 +1,6 @@
-@use "./widget/AppLauncher/style.scss";
-// https://gitlab.gnome.org/GNOME/gtk/-/blob/gtk-3-24/gtk/theme/Adwaita/_colors-public.scss
-$theme_fg_color: "@theme_fg_color";
-$theme_bg_color: "@theme_bg_color";
+@use "./widget/AppLauncher/style" as AppLauncher;
+@use "./widget/Bar/style" as Bar;
 
-window.Bar {
+window.popup-window {
     background: transparent;
-    color: #{$theme_fg_color};
-    font-weight: bold;
-
-    > centerbox {
-        background: #{$theme_bg_color};
-        /* border-radius: 10px; */
-        margin: 0;
-    }
-
-    button {
-        background: transparent;
-        border: none;
-        box-shadow: none;
-        margin: 2px;
-    }
 }
