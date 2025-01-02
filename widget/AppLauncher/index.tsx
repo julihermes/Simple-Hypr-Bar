@@ -1,11 +1,14 @@
 import Apps from "gi://AstalApps";
 import { App, Astal, Gdk, Gtk } from "astal/gtk3";
 import { Variable } from "astal";
+import PopupWindow from "../../common/widget/PopupWindow";
+import { toggleWindow } from "../../common/lib/utils";
 
+const { CENTER } = Gtk.Align;
 const MAX_ITEMS = 5;
 
 function hide() {
-  App.get_window("launcher")!.hide();
+  toggleWindow("AppLauncher");
 }
 
 function AppButton({ app }: { app: Apps.Application }) {
@@ -19,7 +22,7 @@ function AppButton({ app }: { app: Apps.Application }) {
     >
       <box>
         <icon icon={app.iconName} />
-        <box valign={Gtk.Align.CENTER} vertical>
+        <box valign={CENTER} vertical>
           <label className="name" truncate xalign={0} label={app.name} />
           {app.description && (
             <label
@@ -36,9 +39,7 @@ function AppButton({ app }: { app: Apps.Application }) {
 }
 
 export default function AppLauncher() {
-  const { CENTER } = Gtk.Align;
   const apps = new Apps.Apps();
-
   const text = Variable("");
   const list = text((text) => apps.fuzzy_query(text).slice(0, MAX_ITEMS));
   const onEnter = () => {
@@ -47,22 +48,11 @@ export default function AppLauncher() {
   };
 
   return (
-    <window
-      name="launcher"
-      anchor={Astal.WindowAnchor.TOP | Astal.WindowAnchor.BOTTOM}
-      exclusivity={Astal.Exclusivity.IGNORE}
-      keymode={Astal.Keymode.ON_DEMAND}
-      application={App}
-      onShow={() => text.set("")}
-      onKeyPressEvent={function (self, event: Gdk.Event) {
-        if (event.get_keyval()[1] === Gdk.KEY_Escape) self.hide();
-      }}
-    >
+    <PopupWindow name="AppLauncher" halign={CENTER} onShow={() => text.set("")}>
       <box>
-        <eventbox widthRequest={4000} expand onClick={hide} />
         <box hexpand={false} vertical>
           <eventbox heightRequest={100} onClick={hide} />
-          <box widthRequest={500} className="Applauncher" vertical>
+          <box widthRequest={500} className="launcher" vertical>
             <entry
               placeholderText="Search"
               text={text()}
@@ -84,8 +74,7 @@ export default function AppLauncher() {
           </box>
           <eventbox expand onClick={hide} />
         </box>
-        <eventbox widthRequest={4000} expand onClick={hide} />
       </box>
-    </window>
+    </PopupWindow>
   );
 }
