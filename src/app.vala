@@ -18,6 +18,7 @@ class App : Astal.Application {
 
     // entry point of our app
     static int main(string[] argv) {
+        ensure_types();
         App.instance = new App() { instance_name = "simple-hypr-bar" };
 
         try {

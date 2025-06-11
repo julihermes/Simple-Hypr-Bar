@@ -19,6 +19,16 @@ vala_sources = files(
   'widgets/Bar/Bar.vala',
 )
 
+types_tgt = custom_target(
+  'types',
+  command: [find_program('awk'), '-f', meson.project_source_root() / 'gen_ensure_type.awk', '@INPUT@'],
+  input: vala_sources,
+  output: 'ensure_types.vala',
+  capture: true
+)
+
+vala_sources += [types_tgt]
+
 # transplie blueprints
 ui = custom_target(
   'blueprint',
