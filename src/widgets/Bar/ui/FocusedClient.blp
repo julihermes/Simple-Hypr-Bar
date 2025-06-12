@@ -1,0 +1,7 @@
+using Gtk 4.0;
+
+template $SimpleHyprFocusedClient: Gtk.Box {
+    Label {
+        label: bind template.focusedClient;
+    }
+}
