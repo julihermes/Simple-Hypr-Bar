@@ -1,0 +1,15 @@
+using Gtk 4.0;
+
+template $SimpleHyprClock: Gtk.Box {
+    MenuButton {
+        Label {
+            label: bind template.clock;
+        }
+
+        popover: Popover popover {
+            Calendar calendar {
+                show-heading: true;
+            }
+        };
+    }
+}

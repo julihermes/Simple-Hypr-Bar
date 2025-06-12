@@ -3,5 +3,6 @@
     <gresource prefix="/">
         <file>main.css</file>
         <file>widgets/Bar/ui/Bar.ui</file>
+        <file>widgets/Bar/ui/Clock.ui</file>
     </gresource>
 </gresources>

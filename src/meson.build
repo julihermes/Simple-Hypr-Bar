@@ -12,11 +12,13 @@ dependencies = [
 
 blueprint_sources = files(
   'widgets/Bar/ui/Bar.blp',
+  'widgets/Bar/ui/Clock.blp',
 )
 
 vala_sources = files(
   'app.vala',
   'widgets/Bar/Bar.vala',
+  'widgets/Bar/Clock.vala',
 )
 
 types_tgt = custom_target(
