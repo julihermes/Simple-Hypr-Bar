@@ -5,7 +5,6 @@ public class SimpleHypr.FocusedClient : Gtk.Box {
 
     construct {
         hypr = AstalHyprland.get_default();
-
         hypr.bind_property("focused_client", this, "focusedClient", BindingFlags.SYNC_CREATE, (_, src, ref target) => {
             target.set_string(hypr.focused_client.title.to_string());
             return true;

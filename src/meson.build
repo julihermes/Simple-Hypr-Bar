@@ -15,6 +15,7 @@ blueprint_sources = files(
   'widgets/Bar/ui/Bar.blp',
   'widgets/Bar/ui/Clock.blp',
   'widgets/Bar/ui/FocusedClient.blp',
+  'widgets/Bar/ui/Workspaces.blp',
 )
 
 vala_sources = files(
@@ -22,6 +23,7 @@ vala_sources = files(
   'widgets/Bar/Bar.vala',
   'widgets/Bar/Clock.vala',
   'widgets/Bar/FocusedClient.vala',
+  'widgets/Bar/Workspaces.vala',
 )
 
 types_tgt = custom_target(
