@@ -6,5 +6,6 @@
         <file>widgets/Bar/ui/Clock.ui</file>
         <file>widgets/Bar/ui/FocusedClient.ui</file>
         <file>widgets/Bar/ui/Workspaces.ui</file>
+        <file>widgets/Bar/ui/Tray.ui</file>
     </gresource>
 </gresources>

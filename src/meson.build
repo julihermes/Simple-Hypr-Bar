@@ -9,6 +9,7 @@ dependencies = [
   dependency('glib-2.0'),
   dependency('astal-4-4.0'),
   dependency('astal-hyprland-0.1'),
+  dependency('astal-tray-0.1'),
 ]
 
 blueprint_sources = files(
@@ -16,6 +17,7 @@ blueprint_sources = files(
   'widgets/Bar/ui/Clock.blp',
   'widgets/Bar/ui/FocusedClient.blp',
   'widgets/Bar/ui/Workspaces.blp',
+  'widgets/Bar/ui/Tray.blp',
 )
 
 vala_sources = files(
@@ -24,6 +26,7 @@ vala_sources = files(
   'widgets/Bar/Clock.vala',
   'widgets/Bar/FocusedClient.vala',
   'widgets/Bar/Workspaces.vala',
+  'widgets/Bar/Tray.vala',
 )
 
 types_tgt = custom_target(
